@@ -9,7 +9,7 @@
     "author": "AISYSNEXT Ltd.",
     "website": "https://www.aisysnext.com/gd_backup",
     "category": "Administration",
-    "depends": ["base", "mail", "google_drive"],
+    "depends": ["base"],
     "external_dependencies": {"python": ["pydrive"]},
     "data": [
         "security/ir.model.access.csv",

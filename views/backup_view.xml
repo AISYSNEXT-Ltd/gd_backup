@@ -13,7 +13,7 @@
             <field name="name">db.backup.tree</field>
             <field name="model">db.backup</field>
             <field name="arch" type="xml">
-                <tree string="Backup Records" >
+                <tree string="Backup Records">
                     <field name="database" />
                     <field name="date_backup" />
                     <field name="actor" />
@@ -26,8 +26,8 @@
             name="GDrive Backup record"
             action="gd_backup_record_action"
             groups="base.group_user"
-            sequence="1"/>
-
+            parent="gd_backup_general_setting_menu"
+            sequence="2" />
 
 
         <record id="res_config_settings_view_form" model="ir.ui.view">
@@ -38,68 +38,76 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//div[hasclass('settings')]" position="inside">
-                    <div class="app_settings_block" data-string="GDrive Backup" id="gd_backup" string="GDrive Backup" data-key="gd_backup">
+                    <div class="app_settings_block" data-string="GDrive Backup" id="gd_backup"
+                        string="GDrive Backup" data-key="gd_backup">
                         <h2>Google Drive Settings</h2>
 
                         <div class="row mt16 o_settings_container" id="gd_backup_setting">
                             <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane"/>
-                                <div class="o_setting_right_pane">                                
+                                <div class="o_setting_left_pane" />
+                                <div class="o_setting_right_pane">
 
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="gdrive_upload" />
                                         <div class="d-flex">
-                                            <field name="gdrive_upload"/>
+                                            <field name="gdrive_upload" />
                                         </div>
                                     </div>
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="drive_folder_id" />
                                         <div class="d-flex">
-                                            <field name="drive_folder_id"  class="o_input mt8 text-truncate"/>
+                                            <field name="drive_folder_id"
+                                                class="o_input mt8 text-truncate" />
                                         </div>
                                     </div>
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="drive_client_id" />
                                         <div class="d-flex">
-                                            <field name="drive_client_id"  class="o_input mt8 text-truncate"/>
+                                            <field name="drive_client_id"
+                                                class="o_input mt8 text-truncate" />
                                         </div>
                                     </div>
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="drive_client_secret" />
                                         <div class="d-flex">
-                                            <field name="drive_client_secret"  class="o_input mt8 text-truncate"/>
+                                            <field name="drive_client_secret"
+                                                class="o_input mt8 text-truncate" />
                                         </div>
                                     </div>
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="master_pwd" />
                                         <div class="d-flex">
-                                            <field name="master_pwd"  class="o_input mt8 text-truncate"/>
+                                            <field name="master_pwd"
+                                                class="o_input mt8 text-truncate" />
                                         </div>
                                     </div>
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="return_url" />
                                         <div class="d-flex">
-                                            <field name="return_url"  class="o_input mt8 text-truncate"/>
+                                            <field name="return_url"
+                                                class="o_input mt8 text-truncate" />
                                         </div>
                                     </div>
 
                                     <div class="o_widget">
                                         <label class="o_form_label " for="backup_format" />
                                         <div class="d-flex">
-                                            <field name="backup_format"  />
+                                            <field name="backup_format" />
                                         </div>
                                     </div>
 
 
                                     <div class="o_widget">
                                         <div class="d-flex">
-                                            <button name="generate_token" class="mt-3 btn btn-primary" string="Generate Token" type="object" />
+                                            <button name="generate_token"
+                                                class="mt-3 btn btn-primary" string="Generate Token"
+                                                type="object" />
                                         </div>
                                     </div>
 
@@ -114,16 +122,17 @@
                             <div class="col-12 col-lg-6 o_setting_box">
                                 <div class="o_widget">
                                     <div class="d-flex">
-                                        <button name="clean_backup" class="mt-3 btn btn-danger" string="Clean backup" type="object" />
+                                        <button name="clean_backup" class="mt-3 btn btn-danger"
+                                            string="Clean backup" type="object" />
                                     </div>
                                     <div class="d-flex">
-                                        <button name="manual_backup" class="mt-3 btn btn-primary" string="Create Backup" type="object" />
+                                        <button name="manual_backup" class="mt-3 btn btn-primary"
+                                            string="Create Backup" type="object" />
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        
 
                     </div>
                 </xpath>
@@ -146,6 +155,6 @@
             action="gd_backup_config_settings_action"
             groups="base.group_system"
             web_icon="gd_backup,static/description/icon.png"
-            sequence="15"/>
+            sequence="15" />
     </data>
 </odoo>
