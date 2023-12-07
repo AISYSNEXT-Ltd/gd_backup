@@ -79,11 +79,11 @@ class GDrive(models.TransientModel):
         data = {
             "client_config_backend": "settings",
             "client_config": {
-                "client_id": self._env["drive_client_id"],
-                "client_secret": self._env["drive_client_secret"],
-                "redirect_uri": request.env["ir.config_parameter"].get_param(
+                "client_id": str(self._env["drive_client_id"]),
+                "client_secret": str(self._env["drive_client_secret"]),
+                "redirect_uri": str(request.env["ir.config_parameter"].get_param(
                     "web.base.url"
-                )
+                ))
                 + "/google_drive/authentication",
             },
             "oauth_scope": scopes,
